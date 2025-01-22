@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador Léxico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+</head>
+<body>
+    <div>
+        <h1>Analizador Léxico</h1>
+    </div>
+    <div class="Contenedor">
+        <form class="analizador-form" id="analizador-form" method="post" action="/analizar" enctype="multipart/form-data">
+            <div class="Txanalizador">
+                <h2>Texto a analizar</h2>
+                <textarea name="codigo_fuente" rows="20" cols="80" placeholder="Ingresa tu código aquí...  </...> </...>  "></textarea>
+                <div class="file-upload">
+                    <label for="file-input">
+                        <div class="upload-icon">
+                            <img src="../static/imagen/Icon-upload.png" alt="upload">
+                        </div>
+                    </label>
+                    <input id="file-input" type="file" name="file" onchange="showFileName()">
+                    <span id="file-name">Seleccionar archivos</span>
+                </div>
+            </div>
+            <div class="BTN">
+                <button type="button" id="BTNanalizar" onclick="analizarCodigo()">Analizar</button>
+                <button type="button" id="BTNBorrar"  onclick="borrarCampos()">Borrar</button>
+            </div>
+            <div class="Resultado">
+                <h2>Resultado Analizado</h2>
+                <textarea id="resultado" rows="20" cols="80" placeholder="</...> </...> Resultado del análisis..." readonly></textarea>
+            </div>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='Upload.js') }}"></script>
+    <script src="{{ url_for('static', filename='analizar.js') }}"></script>
+    <footer>
+        <div class="copyright">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <p>© 2024 Curso de AUTOMATAS Y LENGUAJES FORMALES---ANALIZADOR LEXICO<a href="https://github.com/dbocel">    ---DBJ--- </a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+    </footer>
+</body>
+</html>
